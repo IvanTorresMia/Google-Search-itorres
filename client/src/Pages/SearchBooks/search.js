@@ -30,7 +30,16 @@ function Search() {
         setLoading(false)
     }
 
-    
+    function saveBook(book) {
+        var image;
+        // If the current book does not have an image then default to google png
+        if (book.volumeInfo.imageLinks === undefined) {
+            image = './googleLogo.png'
+        } else {
+            image = book.volumeInfo.imageLinks.thumbnail
+        }
+        
+    }
 
 
 
@@ -38,7 +47,7 @@ function Search() {
     return (
         <div>
             <SearchBar handleSearchChange={handleSearchChange} searchBooks={searchBooks} />
-            <Results />
+            <Results data={books} saveBook={saveBook} />
         </div>
     )
 }
