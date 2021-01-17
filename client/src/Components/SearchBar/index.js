@@ -1,5 +1,5 @@
 import React from "react";
-import "style.css";
+import "./style.css";
 
 function SearchBar({ handleSearchChange, searchBooks }) {
   return (
@@ -18,3 +18,4 @@ function SearchBar({ handleSearchChange, searchBooks }) {
 }
 
 export default SearchBar;
+
