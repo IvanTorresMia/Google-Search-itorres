@@ -1,0 +1,16 @@
+const router = require('express').Router()
+const bookController = require('../../controllers/controller');
+
+router
+    .route('/')
+    .get(bookController.findAll)
+    .post(bookController.create)
+
+    router.route('/:id').delete(bookController.remove);
+
+
+    router.route
+    .route('/search')
+    .get(bookController.findById)
+
+    module.exports = router;
