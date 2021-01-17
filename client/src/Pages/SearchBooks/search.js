@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SearchBar from '../../Components/SearchBar'
 import Results from '../../Components/Results'
+import API from '../../Utils/API'
 
 
 function Search() {
@@ -17,9 +18,26 @@ function Search() {
         console.log(value) //checking to see if we have any results at the moment.
     }
 
+    // Making API call to the google books API. 
+    const searchBooks = async () => {
+        let newBooks = await API.getBootks(search)
+        .then(function(res) {
+            setLoading(false);
+            return res.data.items //data from the api. 
+        })
+        console.log('new books: ' + newBooks)
+        setBooks(newBooks)
+        setLoading(false)
+    }
+
+    
+
+
+
+
     return (
         <div>
-            <SearchBar handleSearchChange={handleSearchChange}/>
+            <SearchBar handleSearchChange={handleSearchChange} searchBooks={searchBooks} />
             <Results />
         </div>
     )
