@@ -38,7 +38,21 @@ function Search() {
         } else {
             image = book.volumeInfo.imageLinks.thumbnail
         }
+
+        // Oject for the book being saved. We will send this to the back end.
+        const data = {
+            title:book.volumeInfo.title,
+            author:book.volumeInfo.authors,
+            description:book.volumeInfo.description,
+            image: image,
+            link:book.volumeInfo.infoLink
+        }
         
+          //    Making the API call to the back end. 
+          APIbooks.addBook(data).then(res=>{
+            console.log("saved",res)
+            
+        });
     }
 
 
