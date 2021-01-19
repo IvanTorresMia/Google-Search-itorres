@@ -9,7 +9,7 @@ router
     router.route('/:id').delete(bookController.remove);
 
 
-    router.route
+    router
     .route('/search')
     .get(bookController.findById)
 
