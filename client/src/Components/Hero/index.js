@@ -6,7 +6,7 @@ function Hero() {
     <div className="jumbotron">
       <div className="container">
         <h1 className="display-4 text-center mt-5 mb-3">Google Book Search</h1>
-        <img className="logo" src="./googleLogo.png"></img>
+        <img className="logo" src="./googleLogo.png" alt="google"></img>
         <p className="lead text-center mt-3">Search a book and save it</p>
       </div>
     </div>

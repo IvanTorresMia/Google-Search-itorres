@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import savedBooks from '../../Components/SavedBooks'
+import SavedBooks from '../../Components/SavedBooks'
 import API from '../../Utils/API'
 
 function Saved() {
@@ -13,9 +13,15 @@ API.getApiBooks().then(res => {
 })
     }, [books])
 
+    function deleteBooks(id) {
+API.deleteBooks(id).then(res => {
+console.log(res);
+})
+    }
+
   return (
       <div>
-          <savedBooks books={books} deleteBooks={deleteBooks} />
+          <SavedBooks books={books} deleteBooks={deleteBooks} />
       </div>
   )
 }

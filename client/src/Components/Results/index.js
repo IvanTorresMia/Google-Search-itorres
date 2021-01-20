@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './style.css'
 
 
@@ -32,14 +32,14 @@ return (
               <div className="row mb-4 mt-3">
                 <div className="col-lg-4 bookImg">
                   {book.volumeInfo.imageLinks ? <img className="img-fluid" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
-                  : <img src="./googlebookslogo.png" alt="title" className="img-fluid logo2" />}
+                  : <img src="./googleLogo.png" alt="title" className="img-fluid logo2" />}
                 </div>
                 <div className="col-lg-8">
                   <h2>{book.volumeInfo.title}</h2>
                   <p>{book.volumeInfo.authors !== undefined ? book.volumeInfo.authors.join(" & ")
                     : book.volumeInfo.authors}</p>
                   <p className="mr-4">{book.volumeInfo.description}</p>
-                  <a className="btn btn-primary" target="_blank" href={book.volumeInfo.infoLink}>View</a>
+                  <a className="btn btn-primary" target="_blank" href={book.volumeInfo.infoLink} rel="noreferrer">View</a>
                   <button className="ml-3 btn btn-primary" onClick={() => { saveBook(book) }, () => {saveModal(book)}}>Save</button>
                 </div>
               </div>
